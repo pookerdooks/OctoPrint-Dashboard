@@ -285,14 +285,14 @@ $(function () {
                 }
 
                 // Height
-           if (data.currentHeight) {
-                self.currentHeight(Number(data.currentHeight).toFixed(1));  // Changed from raw to .toFixed(1)
+         if (data.currentHeight) {
+    self.currentHeight(Number(data.currentHeight).toFixed(1));  // Changed from raw to .toFixed(1)
     
-                if (self.totalHeight() > 0) {
-                self.heightProgressString(self.currentHeight() / self.totalHeight() * 100);
-                self.heightProgressBarString(Math.round(self.currentHeight() / self.totalHeight() * 100) + '%');
-                }
-                }
+    if (self.totalHeight() > 0) {
+        self.heightProgressString(self.currentHeight() / self.totalHeight() * 100);
+        self.heightProgressBarString(Math.round(self.currentHeight() / self.totalHeight() * 100) + '%');
+    }
+}
 
                 // Feedrate
                 if (data.currentFeedrate && self.dashboardSettings.showFeedrate()) {
