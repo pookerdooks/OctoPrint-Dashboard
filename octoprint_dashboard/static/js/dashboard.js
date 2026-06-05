@@ -285,14 +285,15 @@ $(function () {
                 }
 
                 // Height
-         if (data.currentHeight) {
-    self.currentHeight(Number(data.currentHeight).toFixed(1));  // Changed from raw to .toFixed(1)
-    
-    if (self.totalHeight() > 0) {
-        self.heightProgressString(self.currentHeight() / self.totalHeight() * 100);
-        self.heightProgressBarString(Math.round(self.currentHeight() / self.totalHeight() * 100) + '%');
-    }
-}
+if (data.maxZ) { self.totalHeight(Number(data.maxZ).toFixed(2)); }
+                if (data.currentHeight) {
+                    self.currentHeight(Number(data.currentHeight).toFixed(1));
+
+                    if (self.totalHeight() > 0) {
+                        self.heightProgressString(self.currentHeight() / self.totalHeight() * 100);
+                        self.heightProgressBarString(Math.round(self.heightProgressString()) + '%');
+                    }
+                }
 
                 // Feedrate
                 if (data.currentFeedrate && self.dashboardSettings.showFeedrate()) {
